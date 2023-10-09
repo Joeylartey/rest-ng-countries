@@ -7,11 +7,11 @@ import { DetailComponent } from './pages/detail/detail.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HomeComponent
   },
   {
     path: ':country',
-    component: DetailComponent,
+    component: DetailComponent
   },
 ];
 

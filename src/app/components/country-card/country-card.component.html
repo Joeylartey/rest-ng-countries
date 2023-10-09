@@ -1,7 +1,8 @@
 <div
   *ngIf="country"
-  [routerLink]="'/' + country.name['common']"
+  [routerLink]="'/' + country.name.common"
   class="country-card shadow"
+  style= "cursor: pointer;"
 >
   <div class="country-card-img">
     <img [src]="country.flags['png']" />

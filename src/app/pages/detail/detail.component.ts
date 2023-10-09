@@ -18,7 +18,7 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.country$ = this.api.getCountryByName(params['country']).pipe(
+      this.country$ = this.api.getCountryByName(params.country).pipe(
         tap(
           (res) => console.log(res)
         ),
