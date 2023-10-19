@@ -25,14 +25,11 @@ Users should be able to:
 
 ### Screenshots
 
-![](./src/assets/screenshots/desktop-design-detail-dark.png)
-![](./src/assets/screenshots/desktop-design-detail-light.png)
-![](./src/assets/screenshots/desktop-design-home-dark.png)
-![](./src/assets/screenshots/desktop-design-home-light.png)
-![](./src/assets/screenshots/mobile-design-detail-dark.png)
-![](./src/assets/screenshots/mobile-design-detail-light.png)
-![](./src/assets/screenshots/mobile-design-home-dark.png)
-![](./src/assets/screenshots/mobile-design-home-light.png)
+![](./src/assets/screenshots/desktop-design-detail-dark.PNG)
+![](./src/assets/screenshots/desktop-design-detail-light.PNG)
+![](./src/assets/screenshots/desktop-design-home-dark.PNG)
+![](./src/assets/screenshots/desktop-design-home-light.PNG)
+
 
 ### Links
 
