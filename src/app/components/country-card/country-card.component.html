@@ -1,25 +1,21 @@
-<div
-  *ngIf="country"
-  [routerLink]="'/' + country.name.common"
-  class="country-card shadow"
-  style= "cursor: pointer;"
->
-  <div class="country-card-img">
-    <img [src]="country.flags['png']" />
+<a tabindex="0" *ngIf="country" class="theme-element text-decoration-none rounded-2 country-card overflow-hidden flex-grow-1" routerLink="/details/{{country.name.common}}">
+  <div>
+    <div class="img-container d-flex position-relative">
+      <img ngSrc="{{country.flags.svg}}" class="img-fluid object-fit-cover flex-grow-1" alt="{{country.name.common}} flag." fill>
+    </div>
+    <div class="position-relative z-1 p-4 pb-5 fs-14">
+      <h5 class="pb-3 m-0 fw-800">{{country.name.common}}</h5>
+      <div class="row gy-2">
+        <div class="col-12">
+          <p class=" col-12 m-0 fw-600">Population: <span class="fw-300">{{country.population | number}}</span></p>
+        </div>
+        <div class="col-12">
+          <p class=" col-12 m-0 fw-600">Region: <span class="fw-300">{{country.region}}</span></p>
+        </div>
+        <div *ngIf="country.capital" class="col-12">
+          <p *ngIf="country.capital.length > 0" class="col-12 m-0 fw-600">Capital: <span class="fw-300">{{country.capital}}</span></p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="country-card-info">
-    <h2>{{ country.name['common'] }}</h2>
-    <p>
-      <strong>Population:</strong>
-      {{ country.population | number: '1.0' }}
-    </p>
-    <p>
-      <strong>Region:</strong>
-      {{ country.region }}
-    </p>
-    <p>
-      <strong>Capital:</strong>
-      {{ country.capital }}
-    </p>
-  </div>
-</div>
+</a>

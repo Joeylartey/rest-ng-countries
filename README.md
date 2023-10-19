@@ -42,7 +42,7 @@ Users should be able to:
 
 - Angular 16
 - Angular Routing
-- SCSS
-- Inline Styling
-- CSS Grid
+- Bootstrap
+- Flexbox
+- Standalone Components
 - [REST Countries API](https://restcountries.com)

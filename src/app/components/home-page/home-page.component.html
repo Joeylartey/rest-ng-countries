@@ -1,0 +1,70 @@
+<div class="theme-bg py-5 container-fluid">
+  <div class="container">
+
+    <div class="row mb-5 gy-4 justify-content-between">
+
+      <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+        <label for="search" class="theme-element d-flex rounded-2 border-0 py-3">
+          <i class="bi bi-search ps-4"></i>
+          <input id="search" [formControl]="searchTerm" class="theme-input border-0 w-100 fs-14 fw-600 mx-4" type="search" placeholder="Search for a country...">
+        </label>
+      </div>
+
+      <!-- dropdown -->
+      <div class="col-auto">
+        <div class="dropdown">
+          <button class="theme-element fs-14 fw-600 rounded-2 border-0 px-4 py-3 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{regionFilter ? regionFilter : 'Filter by Region'}}
+          </button>
+          <div class="theme-element border-0 p-0 py-2 mt-2 dropdown-menu dropdown-menu-md-end fw-600 fs-14">
+            <button class="transparent fw-600 text-start border-0 m-0 px-4 py-1 w-100" (click)="getAllCountries()">All</button>
+            <button class="transparent fw-600 text-start border-0 m-0 px-4 py-1 w-100" (click)="getByRegion('Africa')">Africa</button>
+            <button class="transparent fw-600 text-start border-0 m-0 px-4 py-1 w-100" (click)="getByRegion('Americas')">America</button>
+            <button class="transparent fw-600 text-start border-0 m-0 px-4 py-1 w-100" (click)="getByRegion('Asia')">Asia</button>
+            <button class="transparent fw-600 text-start border-0 m-0 px-4 py-1 w-100" (click)="getByRegion('Europe')">Europe</button>
+            <button class="transparent fw-600 text-start border-0 m-0 px-4 py-1 w-100" (click)="getByRegion('Oceania')">Oceania</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <ng-container *ngIf="loading; else content">
+
+      <div class="row gy-5 justify-content-center">
+        <div class="col-auto">
+          <app-loading></app-loading>
+        </div>
+      </div>
+      
+    </ng-container>
+    <ng-template #content>
+
+      <ng-container *ngIf="countries; else notFound">
+        
+        <div class="row g-sm-5 gy-4 justify-content-center">
+          <app-country-card *ngFor="let country of countries" class="col-10 col-sm-6 col-md-4 col-xl-3"
+            [country]="country"></app-country-card>
+        </div>
+        
+      </ng-container>
+      
+    </ng-template>
+    <ng-template #notFound>
+  
+      <div class="row gy-5 justify-content-center">
+        <div class="col-auto">
+          <h3 class="fw-800">Data Not Found</h3>
+        </div>
+      </div>
+    
+    </ng-template>
+
+    <div *ngIf="!loading" class="row gy-5 justify-content-center">
+      <div class="col-auto">
+        <h3 *ngIf="noCountriesFoundMessage" class="fw-800">{{ noCountriesFoundMessage }}</h3>
+      </div>
+    </div>
+
+  </div>
+</div>

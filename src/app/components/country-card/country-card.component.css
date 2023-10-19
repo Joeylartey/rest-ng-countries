@@ -1,0 +1,12 @@
+.img-container {
+  aspect-ratio: 1/0.6;
+  background-color: var(--bg-color);
+}
+
+.country-card {
+  transition: transform 0.25s;
+}
+
+.country-card:hover {
+  transform: scale(1.025);
+}

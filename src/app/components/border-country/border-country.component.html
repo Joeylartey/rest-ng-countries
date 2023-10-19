@@ -1,0 +1,1 @@
+<a tabindex="0" routerLink="/details/{{country.name.common}}" (click)="emitCountryName()" *ngIf="country" class="theme-element px-3 py-1 rounded-2 border-0 text-decoration-none">{{country.name.common? country.name.common : countryCode}}</a>

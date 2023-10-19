@@ -1,25 +1,29 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
-
-import { ApiService } from './services/api.service';
-import { ThemeService, Theme } from './services/theme.service';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
+import { StateService } from './services/state.service';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./app.component.css'],
+  imports: [
+    CommonModule,
+    RouterModule,
+    NavBarComponent
+  ]
 })
 export class AppComponent implements OnInit {
-  theme: Observable<Theme>;
 
-  constructor(
-    private apiService: ApiService,
-    private themeService: ThemeService
-  ) {}
-
-  ngOnInit() {
-    // this.apiService.getAllCountries().subscribe((res) => console.log(res));
-    this.theme = this.themeService.mode$;
+  _stateService = inject(StateService);
+  darkMode: boolean = localStorage.getItem('darkMode') === 'true'? true : false;
+  
+  ngOnInit(): void {
+    if (this.darkMode) {
+      this._stateService.toggleTheme();
+    }
   }
+  
 }

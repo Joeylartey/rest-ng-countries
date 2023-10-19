@@ -1,0 +1,88 @@
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  --text-color: hsl(200, 15%, 8%);
+  --bg-color: hsl(0, 0%, 98%);
+  --element-color: hsl(0, 0%, 100%);
+  --shadow-color: hsla(0, 0%, 50%, 0.250);
+  --input: hsl(0, 0%, 52%);
+  --dropdown-hover: hsl(0, 0%, 95%);
+}
+
+body.dark-theme {
+  --text-color: hsl(0, 0%, 100%);
+  --bg-color: hsl(207, 26%, 17%);
+  --element-color: hsl(209, 23%, 22%);
+  --shadow-color: hsl(207, 26%, 13%);
+  --input: hsl(0, 0%, 100%);
+  --dropdown-hover: hsl(209, 23%, 19%);
+}
+
+.transparent {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.theme-text {
+  color: var(--text-color);
+}
+
+.theme-bg {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-element {
+  background-color: var(--element-color);
+  color: var(--text-color);
+
+  -webkit-box-shadow: 0px 0px 10px -1px var(--shadow-color);
+  -moz-box-shadow: 0px 0px 10px -1px var(--shadow-color);
+  box-shadow: 0px 0px 10px -1px var(--shadow-color);
+}
+
+.theme-input {
+  color: var(--input);
+}
+
+.theme-input::placeholder {
+  color: var(--input);
+}
+
+.dropdown-menu button:hover {
+  background-color: var(--dropdown-hover);
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input {
+  outline: none;
+  background-color: transparent;
+}
