@@ -24,7 +24,7 @@ export class CountriesService {
 
   getCountryByName(name: string): Observable<Country[]|undefined> {
     return this.countries.pipe( 
-    map((countries: Country[]) => countries.filter(country => country.name.common.toLowerCase().includes(name.trim().toLowerCase())))
+    map((countries: Country[]) => countries.filter(country => country.name.common.toLowerCase() === name.trim().toLowerCase()))
     );
   }
   
